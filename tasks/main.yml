@@ -1,32 +1,7 @@
 ---
-- name: Set Fedora related facts
-  set_fact:
-    is_fedora: true
-  when: (ansible_distribution == 'Fedora')
+# Including the always.yml playbook and applying the 'always' tag ensures that 
+# this role's tasks are executed regardless of the tags used by other playbooks
 
-- name: Set CentOS related facts
-  set_fact:
-    is_centos: true
-  when: (ansible_distribution == 'CentOS')
-
-- name: Check for Docker related file
-  stat:
-    path: /.dockerenv
-  register: docker_result
-  ignore_errors: true
-  
-- name: Set Docker fact to true
-  set_fact:
-    is_docker: true
-  when: docker_result.stat.exists
-
-- name: Check for Vagrant related directory
-  stat:
-    path: "{{ vagrant_home_dir }}"
-  register: vagrant_result
-  ignore_errors: true
-  
-- name: Set Vagrant fact to true
-  set_fact:
-    is_vagrant: true
-  when: vagrant_result.stat.exists
+- include: always.yml
+  tags:
+    - always

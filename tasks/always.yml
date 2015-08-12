@@ -1,0 +1,32 @@
+---
+- name: Set Fedora related facts
+  set_fact:
+    is_fedora: true
+  when: (ansible_distribution == 'Fedora')
+
+- name: Set CentOS related facts
+  set_fact:
+    is_centos: true
+  when: (ansible_distribution == 'CentOS')
+
+- name: Check for Docker related file
+  stat:
+    path: /.dockerenv
+  register: docker_result
+  ignore_errors: true
+  
+- name: Set Docker fact to true
+  set_fact:
+    is_docker: true
+  when: docker_result.stat.exists
+
+- name: Check for Vagrant related directory
+  stat:
+    path: "{{ vagrant_home_dir }}"
+  register: vagrant_result
+  ignore_errors: true
+  
+- name: Set Vagrant fact to true
+  set_fact:
+    is_vagrant: true
+  when: vagrant_result.stat.exists
