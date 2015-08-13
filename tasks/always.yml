@@ -9,6 +9,7 @@
     is_centos: true
   when: (ansible_distribution == 'CentOS')
 
+# The /.dockerenv file can be found in Docker images and containers 
 - name: Check for Docker related file
   stat:
     path: /.dockerenv
@@ -20,6 +21,7 @@
     is_docker: true
   when: docker_result.stat.exists
 
+# If a /home/vagrant directory exists then we assume a Vagrant box is being used
 - name: Check for Vagrant related directory
   stat:
     path: "{{ vagrant_home_dir }}"

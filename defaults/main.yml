@@ -1,7 +1,11 @@
 ---
 is_centos: false
+
 is_fedora: false
+
 is_docker: false
+
 is_vagrant: false
+
 vagrant_home_dir: /home/vagrant
 
