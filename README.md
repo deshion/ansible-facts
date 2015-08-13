@@ -4,11 +4,11 @@ This role sets custom [Ansible facts](http://docs.ansible.com/ansible/playbooks_
 
 ## Role Variables
 
-Please refer to the [defaults/main.yml](https://github.com/avtar/ansible-facts/blob/master/defaults/main.yml) file for a list of all the available variables.
+Please refer to the [defaults/main.yml](https://github.com/avtar/ansible-facts/blob/master/defaults/main.yml) file for a list of variables and the facts that they set.
 
 ## Examples
 
-Here are two examples of tasks using custom platform-specific tasks. If a Fedora environment is detected the ``dnf`` module will be used to install a package:
+Here are two examples of tasks using custom platform-specific facts. If a Fedora environment is detected the ``dnf`` module will be used to install a package:
 
 ```
 - name: Install Node.js on Fedora
