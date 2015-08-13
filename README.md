@@ -2,7 +2,7 @@
 
 This role sets custom [Ansible facts](http://docs.ansible.com/ansible/playbooks_variables.html#information-discovered-from-systems-facts) that other roles or playbooks can utilize with [conditionals](http://docs.ansible.com/ansible/playbooks_conditionals.html). It should be applied before any other roles or playbooks that depend on these custom facts.
 
-## Role Variables
+## Facts
 
 Please refer to the [defaults/main.yml](https://github.com/avtar/ansible-facts/blob/master/defaults/main.yml) file for a list of variables and the facts that they set.
 
