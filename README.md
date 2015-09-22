@@ -4,7 +4,7 @@ This role sets custom [Ansible facts](http://docs.ansible.com/ansible/playbooks_
 
 ## Facts
 
-Please refer to the [defaults/main.yml](https://github.com/avtar/ansible-facts/blob/master/defaults/main.yml) file for a list of variables and the facts that they set.
+Please refer to the [defaults/main.yml](https://github.com/idi-ops/ansible-facts/blob/master/defaults/main.yml) file for a list of variables and the facts that they set.
 
 ## Examples
 
