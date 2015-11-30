@@ -9,6 +9,28 @@
     is_centos: true
   when: (ansible_distribution == 'CentOS')
 
+- name: Determine if Atomic
+  stat:
+    path: /run/ostree-booted
+  register: atomic_result
+  changed_when: false
+
+- name: Set Atomic related facts
+  set_fact:
+    is_atomic: true
+  when: atomic_result.stat.exists
+
+- name: Determine if has RPM
+  stat:
+    path: /usr/bin/rpm
+  register: rpm_result
+  changed_when: false
+
+- name: Set RPM related facts
+  set_fact:
+    has_rpm: true
+  when: rpm_result.stat.exists
+
 # The /.dockerenv file can be found in Docker images and containers 
 - name: Check for Docker related file
   stat:

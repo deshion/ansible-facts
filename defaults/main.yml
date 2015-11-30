@@ -3,6 +3,8 @@ is_centos: false
 
 is_fedora: false
 
+is_atomic: false
+
 is_docker: false
 
 is_vagrant: false
