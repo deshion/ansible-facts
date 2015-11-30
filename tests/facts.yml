@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  become: yes
+
+  roles:
+    - facts
+
+  tasks:
+
+    - debug:
+        var: "{{ item }}"
+      with_items:
+        - is_centos
+        - is_fedora
+        - is_atomic
+        - has_rpm
