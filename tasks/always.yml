@@ -31,13 +31,13 @@
     has_rpm: true
   when: rpm_result.stat.exists
 
-# The /.dockerenv file can be found in Docker images and containers 
+# The /.dockerenv file can be found in Docker images and containers
 - name: Check for Docker related file
   stat:
     path: /.dockerenv
   register: docker_result
   ignore_errors: true
-  
+
 - name: Set Docker fact to true
   set_fact:
     is_docker: true
@@ -49,7 +49,7 @@
     path: "{{ vagrant_home_dir }}"
   register: vagrant_result
   ignore_errors: true
-  
+
 - name: Set Vagrant fact to true
   set_fact:
     is_vagrant: true
