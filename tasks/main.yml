@@ -2,6 +2,6 @@
 # Including the always.yml playbook and applying the 'always' tag ensures that
 # this role's tasks are executed regardless of the tags used by other playbooks
 
-- include: always.yml
+- include_tasks: always.yml
   tags:
     - always
