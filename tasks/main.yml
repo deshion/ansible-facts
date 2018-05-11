@@ -3,6 +3,6 @@
 # this role's tasks are executed regardless of the tags used by other playbooks
 
 - name: Include tasks
-  include_tasks: always.yml
+  import_tasks: always.yml
   tags:
     - always
